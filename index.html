@@ -3,10 +3,12 @@
 <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js"></script>
 <body style='margin : 0px; overflow: hidden;'>
 	<a-scene embedded arjs='trackingMethod: best;'>
-      <a-anchor hit-testing-enabled='true'>
-		<a-box color="#6173F4" opacity="0.8" depth="2"></a-box>
-		<a-sphere radius="2" src="texture.png" position="1 1 0"></a-sphere>
-		<a-sky color="#ECECEC"></a-sky>
+		<a-assets>
+			<a-asset-item id="building-obj" src="SimpleModel.obj"></a-asset-item>
+			<a-asset-item id="building-mtl" src="SimpleModel.mtl"></a-asset-item>
+		</a-assets>
+		<!-- use your gltf model -->
+		<a-entity obj-model="obj: #building-obj; mtl: #building-mtl"></a-entity>
       </a-anchor>
 		<a-camera-static/>
 	</a-scene>
